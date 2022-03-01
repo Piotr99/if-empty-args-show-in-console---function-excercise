@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function checkInput(cb, ...args) {
+        let textIsEmpty = false;
+        for (const text of args) {
+          if (!text) {
+            console.log('Brak tekstu');
+            textIsEmpty = true;
+          }
+        }
+        if (!textIsEmpty) {
+          cb();
+        }
+      }
+
+      checkInput(() => {
+        console.log('Wartość nie jest pusta');
+      }, 'Test', 1);
+    </script>
+  </body>
+</html>
